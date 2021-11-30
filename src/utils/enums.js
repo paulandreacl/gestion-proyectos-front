@@ -4,4 +4,10 @@ const Enum_EstadoUsuario = {
     NO_AUTORIZADO: 'No autorizado',
 };
 
-export { Enum_EstadoUsuario };
+const Enum_Rol = {
+    ADMINISTRADOR: 'Administrador',
+    ESTUDIANTE: 'Estudiante',
+    LIDER: 'Líder',
+  };
+
+export { Enum_EstadoUsuario, Enum_Rol };

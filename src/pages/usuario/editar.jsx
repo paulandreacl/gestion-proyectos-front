@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { GET_USUARIO } from 'graphql/usuario/queries';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';

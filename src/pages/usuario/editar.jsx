@@ -27,7 +27,6 @@ const EditarUsuario = () => {
 
     const submitForm = (e) => {
         e.preventDefault();
-        console.log(formData);
         editarUsuario({
             variables: { _id, ...formData, rol: 'ADMINISTRADOR' }
         })

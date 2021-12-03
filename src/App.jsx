@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PrivateLayout from 'layouts/PrivateLayout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserContext } from 'context/userContext';
@@ -16,11 +16,9 @@ import AuthLayout from 'layouts/AuthLayout';
 import Register from 'pages/auth/register';
 import Login from 'pages/auth/login';
 import { AuthContext } from 'context/authContext';
+import jwt_decode from 'jwt-decode';
 
 // import PrivateRoute from 'components/PrivateRoute';
-/* const httpLink = createHttpLink ({
-  uri: 'https://prueba-graphql-paula.herokuapp.com/graphql'
-}) */
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:4000/graphql',
@@ -39,7 +37,6 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
   cache: new InMemoryCache(),
   link: authLink.concat(httpLink),
 });
@@ -49,11 +46,28 @@ function App() {
   const [authToken, setAuthToken] = useState('');
 
   const setToken = (token) => {
+    console.log('set token', token);
     setAuthToken(token);
     if (token) {
       localStorage.setItem('token', JSON.stringify(token));
+    } else {
+      localStorage.removeItem('token');
     }
   };
+
+  useEffect(() => {
+    if (authToken) {
+      const decoded = jwt_decode(authToken);
+      setUserData({
+        _id: decoded._id,
+        nombre: decoded.nombre,
+        apellido: decoded.apellido,
+        identificacion: decoded.identificacion,
+        correo: decoded.correo,
+        rol: decoded.rol,
+      });
+    }
+  }, [authToken]);
 
   return (
     <ApolloProvider client={client}>

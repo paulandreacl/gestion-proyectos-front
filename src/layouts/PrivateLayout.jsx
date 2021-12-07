@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 //import PrivateRoute from 'components/PrivateRoute';
 
+
 const PrivateLayout = () => {
   const navigate = useNavigate();
   const { authToken, setToken } = useAuth();

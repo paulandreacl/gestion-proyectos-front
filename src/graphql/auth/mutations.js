@@ -34,7 +34,7 @@ const LOGIN = gql`
 
 const REFRESH_TOKEN = gql`
   mutation RefreshToken {
-   refreshToken {
+    refreshToken {
       token
       error
     }
@@ -42,3 +42,4 @@ const REFRESH_TOKEN = gql`
 `;
 
 export { REGISTRO, LOGIN, REFRESH_TOKEN };
+

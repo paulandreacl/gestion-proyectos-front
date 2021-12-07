@@ -13,10 +13,10 @@ import { useAuth } from 'context/authContext';
 const Register = () => {
   const { setToken } = useAuth();
   const navigate = useNavigate();
-  const { form, formData, updateFormData } = useFormData(null);
+  const { form, formData, updateFormData } = useFormData();
 
   const [registro, { data: dataMutation, loading: loadingMutation, error: errorMutation }] =
-  useMutation(REGISTRO);
+    useMutation(REGISTRO);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -59,3 +59,4 @@ const Register = () => {
 };
 
 export default Register;
+

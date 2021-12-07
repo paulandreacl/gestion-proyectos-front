@@ -16,3 +16,4 @@ const Input = ({ label, name, defaultValue, type, required }) => {
 };
 
 export default Input;
+

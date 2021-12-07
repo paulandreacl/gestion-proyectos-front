@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import Input from 'components/Input';
 import { Enum_Rol } from 'utils/enums';
-import DropDown from 'components/Dropdown';
+import DropDown from 'components/DropDown';
 import ButtonLoading from 'components/ButtonLoading';
 import useFormData from 'hooks/useFormData';
 import { Link } from 'react-router-dom';
-import { REGISTRO } from 'graphql/auth/mutations';
+import { REGISTRO } from 'graphql/auth/mutations'
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router';
 import { useAuth } from 'context/authContext';
@@ -59,3 +59,4 @@ const Register = () => {
 };
 
 export default Register;
+

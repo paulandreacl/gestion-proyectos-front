@@ -14,3 +14,4 @@ const ButtonLoading = ({ disabled, loading, text }) => {
 };
 
 export default ButtonLoading;
+

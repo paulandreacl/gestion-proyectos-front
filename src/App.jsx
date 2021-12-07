@@ -2,22 +2,23 @@ import React, { useState, useEffect } from 'react';
 import PrivateLayout from 'layouts/PrivateLayout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserContext } from 'context/userContext';
-import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Index from 'pages/Index';
 import Page2 from 'pages/Page2';
 import IndexCategory1 from 'pages/category1/Index';
 import Category1 from 'pages/category1/CategoryPage1';
-import IndexUsuarios from 'pages/usuarios';
-import EditarUsuario from 'pages/usuarios/editar';
+import IndexUsuarios from 'pages/usuario/index';
+import 'styles/globals.css';
+import 'styles/table.css'
+import EditarUsuario from 'pages/usuario/editar';
 import AuthLayout from 'layouts/AuthLayout';
 import Register from 'pages/auth/register';
 import Login from 'pages/auth/login';
 import { AuthContext } from 'context/authContext';
-import IndexProyectos from 'pages/proyectos/Index';
 import jwt_decode from 'jwt-decode';
-import 'styles/globals.css';
-import 'styles/tabla.css';
+import IndexProyectos from 'pages/proyectos/Index';
+
 
 // import PrivateRoute from 'components/PrivateRoute';
 
